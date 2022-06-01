@@ -90,7 +90,7 @@ describe("Our First suite", () => {
         })
     })
 
-    it('invoke command', () => {
+    it.only('invoke command', () => {
         cy.visit("/")
         cy.contains("Forms").click()
         cy.contains("Form Layouts").click()
@@ -120,13 +120,13 @@ describe("Our First suite", () => {
 
     })
 
-    it.only('assert property', () => {
+    it('assert property', () => {
         cy.visit("/")
         cy.contains("Forms").click()
         cy.contains("Datepicker").click()
 
         let date = new Date()
-        date.setDate(date.getDate() + 5)
+        date.setDate(date.getDate() - 6)
         let futureDay = date.getDate()
         let futureMonth = date.toLocaleString('en-US', {month: 'short'})
 
