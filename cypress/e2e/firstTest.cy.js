@@ -126,9 +126,9 @@ describe("Our First suite", () => {
         cy.contains("Datepicker").click()
 
         let date = new Date()
-        date.setDate(date.getDate() + 5)
-        let futureDay = date.getDay()
-        let futureMonth = date.toLocaleString('default', {month: 'short'})
+        date.setDate(date.getDate() - 6)
+        let futureDay = date.getDate()
+        let futureMonth = date.toLocaleString('en-US', {month: 'short'})
 
 
         cy.contains('nb-card', 'Common Datepicker').find('input').then ( input => { 
@@ -137,9 +137,9 @@ describe("Our First suite", () => {
             cy.get('nb-calendar-navigation').invoke('attr', 'ng-reflect-date').then ( dateAttribute => {
                 if(!dateAttribute.includes(futureMonth)){
                     cy.get('[data-name="chevron-right"]').click()
-                    cy.get('nb-calendar-picker').contains(futureDay).click()
+                    cy.get('nb-calendar-picker [class="day-cell today ng-star-inserted"]').contains(futureDay).click()
                 } else {
-                    cy.get('nb-calendar-picker').contains(futureDay).click()  
+                    cy.get('nb-calendar-picker [class="day-cell today ng-star-inserted"]').contains(futureDay).click()  
                 }
             })
 

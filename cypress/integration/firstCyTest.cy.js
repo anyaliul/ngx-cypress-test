@@ -90,7 +90,7 @@ describe("Our First suite", () => {
         })
     })
 
-    it.only('invoke command', () => {
+    it('invoke command', () => {
         cy.visit("/")
         cy.contains("Forms").click()
         cy.contains("Form Layouts").click()
@@ -120,7 +120,7 @@ describe("Our First suite", () => {
 
     })
 
-    it('assert property', () => {
+    it.only('assert property', () => {
         cy.visit("/")
         cy.contains("Forms").click()
         cy.contains("Datepicker").click()
