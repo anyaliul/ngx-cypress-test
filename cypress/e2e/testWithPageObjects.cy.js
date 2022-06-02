@@ -1,3 +1,4 @@
+import { navigateTo } from "../support/page_objects/navigationPage"
 
 describe('Test with Page Objects', () => {
 
@@ -5,6 +6,10 @@ describe('Test with Page Objects', () => {
         cy.visit('/')
     })
 
+    it('verify navigations across the pages', () => {
+        navigateTo.formLayoutsPage()
+        navigateTo.datepickerPage()
+    })
 
 
 
