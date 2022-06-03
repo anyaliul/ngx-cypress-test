@@ -16,13 +16,14 @@ describe('Test with Page Objects', () => {
         navigateTo.toolTipPage()
     })
     
-    it('should submit Inline and Basic form and select tomorrow date in the calendar', () => {
-    navigateTo.formLayoutsPage()
-    onFormLayoutsPage.submitInlineFormWithNameAndEmail('Anna', 'test@test.com')
-    onFormLayoutsPage.submitBasicForm('test@test.com', 'password')
-    navigateTo.datepickerPage()
-    onDatepickerPage.selectTommorowDateFromDatepackerPage(1)
-})
+    it.only('should submit Inline and Basic form and select tomorrow date in the calendar', () => {
+        navigateTo.formLayoutsPage()
+        onFormLayoutsPage.submitInlineFormWithNameAndEmail('Anna', 'test@test.com')
+        onFormLayoutsPage.submitBasicForm('test@test.com', 'password')
+        navigateTo.datepickerPage()
+        onDatepickerPage.selectTommorowDateFromDatepackerPage(1)
+        onDatepickerPage.selectDatePickerWithRangeToday(7, 14)
+    })
 
 
 })
