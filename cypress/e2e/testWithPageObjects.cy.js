@@ -1,4 +1,4 @@
-import { onDatepickerPage } from "../support/page_objects/datepickerPage"
+import { onDatepickerPage } from "../support/page_objects/datepickerPage.js"
 import { onFormLayoutsPage } from "../support/page_objects/formLayoutsPage"
 import { navigateTo } from "../support/page_objects/navigationPage"
 import { onSmartTablePage } from "../support/page_objects/smartTablePage"
